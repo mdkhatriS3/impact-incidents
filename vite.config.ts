@@ -1,12 +1,14 @@
 import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/impact-incidents/',       // required for GitHub Pages
+  plugins: [react()],
+  base: '/impact-incidents/',  // 👈 important for GitHub Pages
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'), // make @ point to /src
-    },
-  },
+      '@': path.resolve(__dirname, 'src')
+    }
+  }
 })
